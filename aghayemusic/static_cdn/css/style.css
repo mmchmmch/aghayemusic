@@ -1,0 +1,256 @@
+@font-face {
+    font-family: vazir;
+    src: url(../fonts/Vazir.woff) format('woff');
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: vazir;
+    direction: rtl;
+}
+body{
+    background-color: #343434;
+}
+a{
+    text-decoration: none;
+}
+header a {
+    color: #fff;
+    text-align: center;
+}
+nav{
+    background-color: #2e2e2e;
+    direction: rtl;
+    display: flex;
+    box-shadow: 1px 1px 1px #ffb400;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a{
+    padding: 20px;
+    color: #ffb74c;
+}
+nav form input{
+    position: relative;
+    padding: 10px 15px;
+    outline: none;
+    margin: 10px 0px;
+}
+nav form button{
+    padding: 10px 15px;
+    background-color: #1adf0b;
+    cursor: pointer;
+}
+nav form button:hover{
+    background-color: #17c30b;
+}
+.posts-header img{
+    border-radius: 50%;
+}
+header{
+    box-shadow: 1px 1px 1px #ffb400;
+}
+.musics{
+    padding: 20px;
+}
+.last-products{
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    direction: rtl;
+}
+.last-products a{
+    color: #2e2e2e;
+}
+.last-products a:hover{
+    color: black;
+}
+hr{
+    background-color: black;
+    padding: 0;
+    border-bottom: 2px black;
+}
+.dfs{
+    display: flex;
+    flex-wrap: wrap;
+}
+.singers{
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    direction: rtl;
+}
+.single{
+    background-color: #ffb400;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: black;
+    display: inline-block;
+    margin: 10px 2px;
+}
+.single:hover{
+    background-color: #d39c1b;
+}
+.product-single{
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 25px;
+    direction: rtl;
+    position: relative;
+}
+.product-single img{
+    border-radius: 10px;
+}
+.product-single a{
+    color: #2e2e2e;
+    margin: 10px 5px;
+    display: inline-block;
+}
+.product-single h3{
+    font-size: 40px;
+}
+.toggle-bar{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: none;
+    z-index: 1001;
+}
+.nav-responsive{
+    background-color: #ffb74c;
+    width: 100%;
+    min-height: 200px;
+    position: fixed;
+    z-index: 999;
+    display: none;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    top: -200px;
+    transition: all .5s;
+}
+@media only screen and (max-width:700px){
+    .product-single{
+        padding: 10px;
+    }
+    .last-products{
+        display: none;
+    }
+    .product-single h3{
+        font-size: 20px;
+    }
+    .singers{
+        display: none;
+    }
+    nav a:not(:nth-child(1)){
+        display: none;
+    }
+    .toggle-bar{
+        display: block;
+    }
+    nav form{
+        display: none;
+    }
+    .nav-responsive{
+        display: flex;
+    }
+}
+audio{
+    width: 100%;
+}
+.h1-head{
+    direction: rtl;
+    background-color: #fff;
+    margin: 10px 0px;
+    padding: 21px;
+    border-radius: 20px;
+}
+
+.nav-responsive a{
+    padding: 10px;
+    color: #2e2e2e;
+}
+.nav-responsive form input{
+    position: relative;
+    padding: 10px 15px;
+    outline: none;
+    margin: 10px 0px;
+    border: none;
+}
+.nav-responsive form button{
+    padding: 10px 15px;
+    background-color: #1adf0b;
+    cursor: pointer;
+    border: none;
+}
+.nav-responsive form button:hover{
+    background-color: #17c30b;
+}
+.go-botton{
+    top: 65px;
+}
+footer{
+    border-top:1px #ffb74c;
+    background-color: #000;
+    padding: 10px;
+    display: block;
+    width: 100%;
+}
+footer *{
+    color: #fff;
+}
+.download-link{
+    width: 100%;
+    background-color: #17c30b;
+    text-align: center;
+    padding: 10px 15px;
+}
+.download-link:hover{
+    background-color: #1b9012;
+}
+.not-found{
+    background-color: #2e2e2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.not-found h1 , h2 ,h3{
+    color: #fff;
+}
+.not-found form input{
+    position: relative;
+    padding: 10px 15px;
+    outline: none;
+    margin: 10px 0px;
+    border: none;
+}
+.not-found form button{
+    padding: 10px 15px;
+    background-color: #1adf0b;
+    cursor: pointer;
+    border: none;
+}
+.not-found form button:hover{
+    background-color: #17c30b;
+}
+.singers h2{
+    color: #000;
+}
+.last-products h2{
+    color: #000;
+}
+.nexted{
+    background-color: #17c30b;
+    padding: 10px 5px;
+}
+.pagination{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}

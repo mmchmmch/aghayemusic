@@ -1,0 +1,96 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <header>
+        <a href="javascripts:void(0);" class="toggle-bar"><i class="fa fa-bars" style="font-size:48px;color:red"></i></a>
+        <div class="nav-responsive">
+            <a href="/search?=شاد">آهنگ های شاد</a>
+            <a href="/search?=غمگین"> آهنگ غمگین</a>
+            <a href="/search?=مداحی">مداهی</a>
+            <form action="/search">
+                <input type="text" placeholder=" نام آهنگ ، آلبوم ،متن" name="q" id="q">
+                <button type="submit">جستجو</button>
+            </form>
+        </div>
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                {% for last in lasts_2 %}
+                <div class="col-md-2 col-6 ">
+                    <a href="/search?q={{ last.name }}">
+                        <div class="posts-header">
+                            <img width="100%" src="{{ last.img.url }}" alt="">
+                        </div>
+                        <p>{{ last.name }}</p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </header>
+    <div class="musics container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="singers">
+                    <h2>اسامی خوانندگان</h2>
+                    <div class="dfs">
+                        {% for singer in singers %}
+                        <a href="/search?q={{ singer.name }}" class="single">{{ singer.name}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <h1 class="h1-head">
+                    پر طرفدار ها
+                    <span>
+                        آقای موزیک
+                    </span>
+                </h1>
+                {% for audio in audios %}
+                <div class="product-single">
+                    <h3><a href="#">{{ audio.name }}</a></h3>
+                    <div class="view">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <img src="{{ audio.img.url }}" width="100%" alt="">
+                    <audio controls preload="none">
+                        <source src="{{ audio.src }}" type="audio/mpeg">
+                    </audio>
+                    <a class="download-link" download href="{{ audio.src }}">دانلود آهنگ با لینک مستقیم</a>
+                </div>
+                {% endfor %}
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a class="nexted" href="?page=1">&laquo; first</a>
+                            <a class="nexted" href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                
+                        <span class="current nexted">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                
+                        {% if page_obj.has_next %}
+                            <a class="nexted" href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a class="nexted" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="last-products">
+                    <h2> جدید ترین آهنگ ها </h2>
+                    {% for last in lasts %}
+                    <a href="/search?q={{ last.id }}">
+                        <p>{{ last.name }}</p>
+                    </a>
+                    <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

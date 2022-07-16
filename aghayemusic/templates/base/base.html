@@ -1,0 +1,17 @@
+{% include 'shared/_header.html'%}
+{% load static %}
+<body>
+    <nav>
+        <a href="/">خانه</a>
+        <a href="/search?q=شاد">آهنگ های شاد</a>
+        <a href="/search?q=غمگین"> آهنگ غمگین</a>
+        <a href="/search?q=مداحی">مداحی</a>
+        <form action="/search">
+            <input type="text" placeholder=" نام آهنگ ، آلبوم ،متن" name="q" id="q">
+            <button type="submit">جستجو</button>
+        </form>
+    </nav>
+    {% block content %}
+    {% endblock %}
+{% include 'shared/_footer.html' %}
+            
